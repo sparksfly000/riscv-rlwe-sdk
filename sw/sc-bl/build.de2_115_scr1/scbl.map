@@ -1,0 +1,363 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strnlen.o)
+                              build.de2_115_scr1/printf.o (strnlen)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .text.show_header
+                0x0000000000000000       0x30 build.de2_115_scr1/scbl.o
+ .text.indication_tasks
+                0x0000000000000000       0x20 build.de2_115_scr1/scbl.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/uart.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/uart.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/uart.o
+ .text.uart_puthex16
+                0x0000000000000000       0x34 build.de2_115_scr1/uart.o
+ .text.uart_puthex64
+                0x0000000000000000       0x34 build.de2_115_scr1/uart.o
+ .text.uart_puthex4
+                0x0000000000000000       0x30 build.de2_115_scr1/uart.o
+ .text.uart_read_str
+                0x0000000000000000       0xf8 build.de2_115_scr1/uart.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/xmodem.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/xmodem.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/xmodem.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/init.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/init.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/init.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/trap.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/trap.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/trap.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/leds.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/leds.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/leds.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/printf.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/printf.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/printf.o
+ .text.stream_putc
+                0x0000000000000000       0x60 build.de2_115_scr1/printf.o
+ .text.vfprintf
+                0x0000000000000000      0x5c0 build.de2_115_scr1/printf.o
+ .rodata.vfprintf
+                0x0000000000000000       0x44 build.de2_115_scr1/printf.o
+ .text.printf   0x0000000000000000       0x50 build.de2_115_scr1/printf.o
+ .text.snprintf
+                0x0000000000000000       0xb0 build.de2_115_scr1/printf.o
+ .comment       0x0000000000000000       0x1b build.de2_115_scr1/printf.o
+ .text          0x0000000000000000        0x0 build.de2_115_scr1/startup.o
+ .data          0x0000000000000000        0x0 build.de2_115_scr1/startup.o
+ .bss           0x0000000000000000        0x0 build.de2_115_scr1/startup.o
+ .text          0x0000000000000000       0x24 /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strnlen.o)
+ .data          0x0000000000000000        0x0 /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strnlen.o)
+ .bss           0x0000000000000000        0x0 /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strnlen.o)
+ .comment       0x0000000000000000       0x1b /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a(lib_a-strnlen.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0xffffffffffff0000 0x0000000000010000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build.de2_115_scr1/scbl.o
+LOAD build.de2_115_scr1/uart.o
+LOAD build.de2_115_scr1/xmodem.o
+LOAD build.de2_115_scr1/init.o
+LOAD build.de2_115_scr1/trap.o
+LOAD build.de2_115_scr1/leds.o
+LOAD build.de2_115_scr1/printf.o
+LOAD build.de2_115_scr1/startup.o
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/libgcc.a
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/libgcc.a
+START GROUP
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libc.a
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/../../../../riscv32-unknown-elf/lib/libgloss.a
+END GROUP
+LOAD /home/sparksfly/program/RISCV/newlib_cross/install/lib/gcc/riscv32-unknown-elf/7.1.1/libgcc.a
+                0x0000000000000020                SEC_ALIGN = 0x20
+                0x000000000000d000                STACK_SIZE = 0xd000
+
+__start_of_ram  0xffffffffffff0000        0x0
+                0xffffffffffff0000                _end = .
+
+.stack          0xffffffffffff0000     0xd000
+                0xffffffffffff0000                __STACK_START__ = .
+                0xffffffffffff0000        0x4 LONG 0x0
+                0xffffffffffffd000                . = (. + (STACK_SIZE - 0x4))
+ *fill*         0xffffffffffff0004     0xcffc 
+                0xffffffffffffd000                __C_STACK_TOP__ = .
+                0xffffffffffffd000                __STACK_END__ = .
+
+.bss            0xffffffffffffd000        0x0
+                0xffffffffffffd000                __BSS_START__ = .
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ *(COMMON)
+
+.sbss           0xffffffffffffd000       0x20
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss.id_val.1999
+                0xffffffffffffd000        0x4 build.de2_115_scr1/scbl.o
+ .sbss.idx_i.2000
+                0xffffffffffffd004        0x4 build.de2_115_scr1/scbl.o
+ .sbss.idx_j.2001
+                0xffffffffffffd008        0x4 build.de2_115_scr1/scbl.o
+ .sbss.leds_val.2015
+                0xffffffffffffd00c        0x4 build.de2_115_scr1/scbl.o
+ .sbss.right.2017
+                0xffffffffffffd010        0x4 build.de2_115_scr1/scbl.o
+ .sbss.start_time.2002
+                0xffffffffffffd014        0x4 build.de2_115_scr1/scbl.o
+ .sbss.start_time.2016
+                0xffffffffffffd018        0x4 build.de2_115_scr1/scbl.o
+ *(.scommon)
+                0xffffffffffffd020                . = ALIGN (0x10)
+ *fill*         0xffffffffffffd01c        0x4 
+                0xffffffffffffd020                __BSS_END__ = .
+
+.sdata          0xffffffffffffd020        0x0
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0xffffffffffffd820                __global_pointer$ = (. + 0x800)
+
+.data
+ *(.data .data.*)
+
+.tdata          0xffffffffffffd020        0x0
+                0xffffffffffffd020                _tls_data = .
+                0xffffffffffffd020                _tdata_begin = .
+ *(.tdata .tdata.*)
+                0xffffffffffffd020                _tdata_end = .
+                0xffffffffffffd020                . = ALIGN (0x10)
+
+.tbss           0xffffffffffffd020      0x180
+                0xffffffffffffd020                _tbss_begin = .
+ *(.tbss .tbss.*)
+ .tbss.hart_local_storage
+                0xffffffffffffd020      0x180 build.de2_115_scr1/trap.o
+                0xffffffffffffd020                hart_local_storage
+                0xffffffffffffd1a0                . = ALIGN (SEC_ALIGN)
+                0xffffffffffffd1a0                _tbss_end = .
+                0x0000000000000180                __TLS_SIZE__ = (_tbss_end - _tdata_begin)
+                0xffffffffffffce80                __TLS0_BASE__ = (__C_STACK_TOP__ - __TLS_SIZE__)
+
+.srodata
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata.*)
+
+.rodata         0xffffffffffffd020      0x458
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.cmd_plf_info.str1.4
+                0xffffffffffffd020       0x19 build.de2_115_scr1/scbl.o
+ *fill*         0xffffffffffffd039        0x3 
+ .rodata.cmd_xload.str1.4
+                0xffffffffffffd03c       0x40 build.de2_115_scr1/scbl.o
+ .rodata.hwinfo.str1.4
+                0xffffffffffffd07c       0x81 build.de2_115_scr1/scbl.o
+                                         0x85 (size before relaxing)
+ *fill*         0xffffffffffffd0fd        0x3 
+ .rodata.main.str1.4
+                0xffffffffffffd100       0x1c build.de2_115_scr1/scbl.o
+ .rodata.scbl_commands
+                0xffffffffffffd11c       0x60 build.de2_115_scr1/scbl.o
+ .rodata.show_header.str1.4
+                0xffffffffffffd17c       0x5d build.de2_115_scr1/scbl.o
+ *fill*         0xffffffffffffd1d9        0x3 
+ .rodata.str1.4
+                0xffffffffffffd1dc       0x46 build.de2_115_scr1/scbl.o
+ *fill*         0xffffffffffffd222        0x2 
+ .rodata.usage.str1.4
+                0xffffffffffffd224        0x3 build.de2_115_scr1/scbl.o
+ *fill*         0xffffffffffffd227        0x1 
+ .rodata.uart_print_info.str1.4
+                0xffffffffffffd228       0x13 build.de2_115_scr1/uart.o
+ *fill*         0xffffffffffffd23b        0x1 
+ .rodata.mem_regions
+                0xffffffffffffd23c       0x60 build.de2_115_scr1/init.o
+                0xffffffffffffd23c                mem_regions
+ .rodata.str1.4
+                0xffffffffffffd29c       0x28 build.de2_115_scr1/init.o
+ .rodata.bad_trap.str1.4
+                0xffffffffffffd2c4        0x4 build.de2_115_scr1/trap.o
+ .rodata.bad_trap_handler.str1.4
+                0xffffffffffffd2c8        0xd build.de2_115_scr1/trap.o
+ *fill*         0xffffffffffffd2d5        0x3 
+ .rodata.print_bad_trap.str1.4
+                0xffffffffffffd2d8       0x43 build.de2_115_scr1/trap.o
+ *fill*         0xffffffffffffd31b        0x1 
+ .rodata.regnames.1719
+                0xffffffffffffd31c       0x80 build.de2_115_scr1/trap.o
+ .rodata.str1.4
+                0xffffffffffffd39c       0x7c build.de2_115_scr1/trap.o
+ .rodata.HEX_DIGITS_TABLE
+                0xffffffffffffd418       0x10 build.de2_115_scr1/leds.o
+ .rodata.HEX_MAP
+                0xffffffffffffd428       0x30 build.de2_115_scr1/leds.o
+ .rodata.dips_print_info.str1.4
+                0xffffffffffffd458        0x8 build.de2_115_scr1/leds.o
+ .rodata.leds_print_info.str1.4
+                0xffffffffffffd460       0x18 build.de2_115_scr1/leds.o
+                                         0x16 (size before relaxing)
+ *(.gnu.linkonce.r.*)
+
+.text           0xffffffffffffd480     0x156c
+                0xffffffffffffd480                __TEXT_START__ = .
+ *(.text .text*)
+ .text.leds_task
+                0xffffffffffffd480       0xa4 build.de2_115_scr1/scbl.o
+ .text.cmd_start
+                0xffffffffffffd524       0x54 build.de2_115_scr1/scbl.o
+ .text.cmd_mem_modify
+                0xffffffffffffd578       0x3c build.de2_115_scr1/scbl.o
+ .text.cmd_xload
+                0xffffffffffffd5b4       0x94 build.de2_115_scr1/scbl.o
+ .text.hex_leds_task
+                0xffffffffffffd648      0x170 build.de2_115_scr1/scbl.o
+ .text.dump_mem
+                0xffffffffffffd7b8      0x168 build.de2_115_scr1/scbl.o
+                0xffffffffffffd7b8                dump_mem
+ .text.cmd_mem_dump
+                0xffffffffffffd920        0x8 build.de2_115_scr1/scbl.o
+ .text.hwinfo   0xffffffffffffd928      0x1ec build.de2_115_scr1/scbl.o
+                0xffffffffffffd928                hwinfo
+ .text.cmd_plf_info
+                0xffffffffffffdb14       0x34 build.de2_115_scr1/scbl.o
+ .text.usage    0xffffffffffffdb48       0x9c build.de2_115_scr1/scbl.o
+                0xffffffffffffdb48                usage
+ .text.cmd_show_commands
+                0xffffffffffffdbe4        0x4 build.de2_115_scr1/scbl.o
+ .text.startup.main
+                0xffffffffffffdbe8      0x1c0 build.de2_115_scr1/scbl.o
+                0xffffffffffffdbe8                main
+ .text.sc1f_uart_init
+                0xffffffffffffdda8       0x40 build.de2_115_scr1/uart.o
+                0xffffffffffffdda8                sc1f_uart_init
+ .text.sc1f_uart_putchar
+                0xffffffffffffdde8       0x40 build.de2_115_scr1/uart.o
+                0xffffffffffffdde8                putchar
+                0xffffffffffffdde8                sc1f_uart_putchar
+ .text.uart_puts
+                0xffffffffffffde28       0x4c build.de2_115_scr1/uart.o
+                0xffffffffffffde28                uart_puts
+ .text.uart_puthex8
+                0xffffffffffffde74       0x5c build.de2_115_scr1/uart.o
+                0xffffffffffffde74                uart_puthex8
+ .text.uart_puthex32
+                0xffffffffffffded0       0x50 build.de2_115_scr1/uart.o
+                0xffffffffffffded0                uart_puthex32
+ .text.uart_print_info
+                0xffffffffffffdf20       0x7c build.de2_115_scr1/uart.o
+                0xffffffffffffdf20                uart_print_info
+ .text.uart_putdec
+                0xffffffffffffdf9c       0xec build.de2_115_scr1/uart.o
+                0xffffffffffffdf9c                uart_putdec
+ .text.uart_read_hex
+                0xffffffffffffe088      0x150 build.de2_115_scr1/uart.o
+                0xffffffffffffe088                uart_read_hex
+ .text.flushinput
+                0xffffffffffffe1d8       0x4c build.de2_115_scr1/xmodem.o
+ .text.unlikely.xmodem_send_can
+                0xffffffffffffe224       0x4c build.de2_115_scr1/xmodem.o
+ .text.xmodem_receive
+                0xffffffffffffe270      0x384 build.de2_115_scr1/xmodem.o
+                0xffffffffffffe270                xmodem_receive
+ .text.print_bad_trap
+                0xffffffffffffe5f4      0x19c build.de2_115_scr1/trap.o
+                0xffffffffffffe5f4                print_bad_trap
+ .text.bad_trap
+                0xffffffffffffe790       0x28 build.de2_115_scr1/trap.o
+                0xffffffffffffe790                bad_trap
+ .text.bad_trap_handler
+                0xffffffffffffe7b8       0x28 build.de2_115_scr1/trap.o
+                0xffffffffffffe7b8                bad_trap_handler
+ .text.mcall_trap
+                0xffffffffffffe7e0       0xbc build.de2_115_scr1/trap.o
+                0xffffffffffffe7e0                mcall_trap
+ .text.sc1f_leds_hex.part.0
+                0xffffffffffffe89c       0x48 build.de2_115_scr1/leds.o
+ .text.sc1f_leds_hex
+                0xffffffffffffe8e4       0x10 build.de2_115_scr1/leds.o
+                0xffffffffffffe8e4                sc1f_leds_hex
+ .text.sc1f_leds_hex_digit
+                0xffffffffffffe8f4       0x24 build.de2_115_scr1/leds.o
+                0xffffffffffffe8f4                sc1f_leds_hex_digit
+ .text.sc1f_leds_init
+                0xffffffffffffe918       0x48 build.de2_115_scr1/leds.o
+                0xffffffffffffe918                sc1f_leds_init
+ .text.leds_print_info
+                0xffffffffffffe960       0x54 build.de2_115_scr1/leds.o
+                0xffffffffffffe960                leds_print_info
+ .text.dips_print_info
+                0xffffffffffffe9b4       0x38 build.de2_115_scr1/leds.o
+                0xffffffffffffe9b4                dips_print_info
+ *(.init.text)
+                0xffffffffffffe9ec                __TEXT_END__ = .
+
+.startup        0xfffffffffffff800      0x254
+ *(.startup)
+ .startup       0xfffffffffffff800      0x254 build.de2_115_scr1/startup.o
+                0xfffffffffffff8bc                _hart_halt
+
+.vectors        0xffffffffffffff00      0x100
+ *(.vectors)
+ .vectors       0xffffffffffffff00       0xbc build.de2_115_scr1/startup.o
+                0xffffffffffffff00                _start
+ FILL mask 0x00000000
+                0xfffffffffffffffc                . = (ALIGN (0x100) - 0x4)
+ *fill*         0xffffffffffffffbc       0x40 00000000
+                0xfffffffffffffffc        0x4 LONG 0x0
+
+.rela.dyn       0x0000000000000000        0x0
+ .rela.text.cmd_start
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.cmd_mem_modify
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.cmd_xload
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.hex_leds_task
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.dump_mem
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.hwinfo
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.cmd_plf_info
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.show_header
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.usage
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.startup.main
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.bad_trap
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.bad_trap_handler
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.mcall_trap
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.stream_putc
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.text.vfprintf
+                0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+ .rela.startup  0x0000000000000000        0x0 build.de2_115_scr1/scbl.o
+
+/DISCARD/
+ *(.eh_frame .eh_frame.*)
+OUTPUT(build.de2_115_scr1/scbl.elf elf32-littleriscv)
+
+.comment        0x0000000000000000       0x1a
+ .comment       0x0000000000000000       0x1a build.de2_115_scr1/scbl.o
+                                         0x1b (size before relaxing)
+ .comment       0x000000000000001a       0x1b build.de2_115_scr1/uart.o
+ .comment       0x000000000000001a       0x1b build.de2_115_scr1/xmodem.o
+ .comment       0x000000000000001a       0x1b build.de2_115_scr1/init.o
+ .comment       0x000000000000001a       0x1b build.de2_115_scr1/trap.o
+ .comment       0x000000000000001a       0x1b build.de2_115_scr1/leds.o
