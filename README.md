@@ -1,6 +1,6 @@
 Requirement:
-software : the vesion of quartus need upon 16.
- 
+software : the version of quartus need upon 16.
+
 This project reference the scr1-sdk :
 His board is de10lite bus mine is de2-115, so i need to modify something about it.
 Here is Modify:
@@ -10,3 +10,8 @@ Here is Modify:
 Notice :
 
 If you copy the project to your dictionary path, then you need to modify the path of the  .hex file in qysy's on-chip ram module 
+
+
+step：
+
+1 。 Block ram Instantiation in ./src/top/scr1_dp_memory.sv

@@ -5,6 +5,8 @@
 
 `include "scr1_arch_description.svh"
 
+`define BRAM_INSTANTIATION
+
 module scr1_dp_memory
 #(
     parameter SCR1_WIDTH    = 32,
@@ -27,6 +29,21 @@ module scr1_dp_memory
 );
 
 `ifdef SCR1_TARGET_FPGA_INTEL
+
+`ifdef BRAM_INSTANTIATION
+
+bram i_bram(
+	.address_a(addra),
+	.address_b(addrb),
+	.byteena_b(webb),
+	.clock(clk),
+	.data_a('0),
+	.data_b(datab),
+	.wren_a(1'b0),
+	.wren_b(wenb),
+	.q_a(qa),
+	.q_b(qb));
+`else
 //-------------------------------------------------------------------------------
 // Local signal declaration
 //-------------------------------------------------------------------------------
@@ -55,6 +72,7 @@ always_ff @(posedge clk) begin
         qb <= memory_array[addrb];
     end
 end
+
 //-------------------------------------------------------------------------------
 // Port A memory behavioral description
 //-------------------------------------------------------------------------------
@@ -63,6 +81,8 @@ always_ff @(posedge clk) begin
         qa <= memory_array[addra];
     end
 end
+
+`endif
 
 `else // SCR1_TARGET_FPGA_INTEL
 
