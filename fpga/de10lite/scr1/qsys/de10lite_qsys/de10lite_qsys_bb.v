@@ -87,8 +87,8 @@ module de10lite_qsys (
 	output		sdram_cas_n;
 	output		sdram_cke;
 	output		sdram_cs_n;
-	inout	[15:0]	sdram_dq;
-	output	[1:0]	sdram_dqm;
+	inout	[31:0]	sdram_dq;
+	output	[3:0]	sdram_dqm;
 	output		sdram_ras_n;
 	output		sdram_we_n;
 	input		uart_waitrequest;

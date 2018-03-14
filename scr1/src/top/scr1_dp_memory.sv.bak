@@ -1,0 +1,572 @@
+/// Copyright by Syntacore LLC © 2016, 2017. See LICENSE for details
+/// @file       <scr1_dp_memory.sv>
+/// @brief      Dual-port synchronous memory with byte enable inputs
+///
+
+`include "scr1_arch_description.svh"
+`include "defines.svh"
+
+
+
+module scr1_dp_memory
+#(
+    parameter SCR1_WIDTH    = 32,
+    parameter SCR1_SIZE     = `SCR1_IMEM_AWIDTH'h00010000,
+    parameter SCR1_NBYTES   = SCR1_WIDTH / 8
+)
+(
+    input   logic                           clk,
+    // Port A
+    input   logic                           rena,
+    input   logic [$clog2(SCR1_SIZE)-1:2]   addra,
+    output  logic [SCR1_WIDTH-1:0]          qa,
+    // Port B
+    input   logic                           renb,
+    input   logic                           wenb,
+    input   logic [SCR1_NBYTES-1:0]         webb,
+	 input   logic                           w_is_vector,
+    input   logic [$clog2(SCR1_SIZE)-1:2]   addrb,
+    input   type_vector 			           datab,
+    output  type_vector			              qb
+);
+
+
+
+`ifdef SCR1_TARGET_FPGA_INTEL
+//-------------------------------------------------------------------------------
+// Local signal declaration
+//-------------------------------------------------------------------------------
+logic [SCR1_WIDTH-1:0] q_a0,q_a1,q_a2,q_a3,q_a4,q_a5,q_a6,q_a7;
+logic [SCR1_WIDTH-1:0] q_b0,q_b1,q_b2,q_b3,q_b4,q_b5,q_b6,q_b7;
+logic [SCR1_WIDTH-1:0] data_b0,data_b1,data_b2,data_b3,data_b4,data_b5,data_b6,data_b7;
+logic block0_sel_b,block1_sel_b,block2_sel_b,block3_sel_b,block4_sel_b,block5_sel_b,block6_sel_b,block7_sel_b;
+
+block_ram	block_ram_0 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b0 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block0_sel_b) ),
+	.q_a ( q_a0 ),
+	.q_b ( q_b0 )
+	);
+
+block_ram	block_ram_1 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b1 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block1_sel_b)),
+	.q_a ( q_a1 ),
+	.q_b ( q_b1 )
+	);
+
+block_ram	block_ram_2 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b2 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block2_sel_b) ),
+	.q_a ( q_a2 ),
+	.q_b ( q_b2 )
+	);
+
+block_ram	block_ram_3 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b3 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block3_sel_b)),
+	.q_a ( q_a3 ),
+	.q_b ( q_b3 )
+	);
+
+block_ram	block_ram_4 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b4 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block4_sel_b)),
+	.q_a ( q_a4 ),
+	.q_b ( q_b4 )
+	);
+
+block_ram	block_ram_5 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b5 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block5_sel_b)),
+	.q_a ( q_a5 ),
+	.q_b ( q_b5 )
+	);
+
+block_ram	block_ram_6 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b6 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block6_sel_b)),
+	.q_a ( q_a6 ),
+	.q_b ( q_b6 )
+	);
+
+block_ram	block_ram_7 (
+	.address_a ( addra[$clog2(SCR1_SIZE)-1:5] ),
+	.address_b ( addrb[$clog2(SCR1_SIZE)-1:5] ),
+	.byteena_b ( webb ),
+	.clock ( clk ),
+	.data_a ( '0 ),
+	.data_b ( data_b7 ),
+	.rden_a ( rena ),
+	.rden_b ( renb ),
+	.wren_a ( 1'b0 ),
+	.wren_b ( wenb &(w_is_vector | block7_sel_b)),
+	.q_a ( q_a7 ),
+	.q_b ( q_b7 )
+	);
+
+
+always_comb begin
+	
+	case(addra[4:2])
+		3'b000:  qa = q_a0;
+		3'b001:  qa = q_a1;
+		3'b010:  qa = q_a2;
+		3'b011:  qa = q_a3;
+		3'b100:  qa = q_a4;
+		3'b101:  qa = q_a5;
+		3'b110:  qa = q_a6;
+		3'b111:  qa = q_a7;
+		default : ;
+	endcase
+
+end
+
+	
+always_comb begin
+
+	block0_sel_b = 1'b0;
+	block1_sel_b = 1'b0;
+	block2_sel_b = 1'b0;
+	block3_sel_b = 1'b0;
+	block4_sel_b = 1'b0;
+	block5_sel_b = 1'b0;
+	block6_sel_b = 1'b0;
+	block7_sel_b = 1'b0;
+
+	data_b0 = '0;
+	data_b1 = '0;
+	data_b2 = '0;
+	data_b3 = '0;
+	data_b4 = '0;
+	data_b5 = '0;
+	data_b6 = '0;
+	data_b7 = '0;
+	
+	qb = '0;
+
+	if(w_is_vector) begin
+		{data_b7,data_b6,data_b5,data_b4,data_b3,data_b2,data_b1,data_b0 } =  datab;
+		qb = {q_b7,q_b6,q_b5,q_b4,q_b3,q_b2,q_b1,q_b0};
+	end
+	else begin
+   case(addrb[4:2]) 
+		3'b000:  begin 
+						qb[0] = q_b0;
+						block0_sel_b = 1'b1;
+						data_b0 = datab[0];							
+					end
+		3'b001:  begin 
+						qb[0] = q_b1;
+						block1_sel_b = 1'b1;
+						data_b1 = datab[0];
+						
+					end
+		3'b010:  begin 
+
+						qb[0] = q_b2;
+						block2_sel_b = 1'b1;
+						data_b2 = datab[0];
+											
+					end
+		3'b011:  begin 
+				
+						qb[0] = q_b3;
+						block3_sel_b = 1'b1;
+						data_b3 = datab[0];							
+					end
+		3'b100:  begin 
+						qb[0] = q_b4;
+						block4_sel_b = 1'b1;
+						data_b4 = datab[0];							
+					end
+		3'b101:  begin 
+
+						qb[0] = q_b5;
+						block5_sel_b = 1'b1;
+						data_b5 = datab[0];							
+					end
+		3'b110:  begin 
+						qb[0] = q_b6;
+						block6_sel_b = 1'b1;
+						data_b6 = datab[0];							
+					end 
+		3'b111:  begin 
+						qb[0] = q_b7;
+						block7_sel_b = 1'b1;
+						data_b7 = datab[0];							
+					end
+		default : ;
+		
+	endcase
+	end
+end	
+
+
+
+
+	
+/*
+logic [SCR1_NBYTES-1:0][7:0] memory_array0 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array1 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array2 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array3 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array4 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array5 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array6 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+logic [SCR1_NBYTES-1:0][7:0] memory_array7 [0:(SCR1_SIZE/SCR1_NBYTES/8)-1];
+
+
+logic [3:0] wenbb;
+logic [$clog2(SCR1_SIZE)-1-3:2]   addra_shift;
+logic [$clog2(SCR1_SIZE)-1-3:2]   addrb_shift;
+//-------------------------------------------------------------------------------
+// Port B memory behavioral description
+//-------------------------------------------------------------------------------
+assign wenbb = {4{wenb}} & webb;
+assign addrb_shift = addrb >> 3;
+assign addra_shift = addra >> 3;
+always_ff @(posedge clk) begin
+	
+    if (wenb) begin
+		  if(w_is_vector) begin
+		 
+					memory_array0[addrb_shift ][0] <= datab[0][0+:8];
+					memory_array0[addrb_shift ][1] <= datab[0][8+:8];
+					memory_array0[addrb_shift ][2] <= datab[0][16+:8];
+					memory_array0[addrb_shift ][3] <= datab[0][24+:8];
+					
+					memory_array1[addrb_shift ][0] <= datab[1][0+:8];
+					memory_array1[addrb_shift ][1] <= datab[1][8+:8];
+					memory_array1[addrb_shift ][2] <= datab[1][16+:8];
+					memory_array1[addrb_shift ][3] <= datab[1][24+:8];
+					
+					memory_array2[addrb_shift ][0] <= datab[2][0+:8];
+					memory_array2[addrb_shift ][1] <= datab[2][8+:8];
+					memory_array2[addrb_shift ][2] <= datab[2][16+:8];
+					memory_array2[addrb_shift ][3] <= datab[2][24+:8];
+					
+					memory_array3[addrb_shift ][0] <= datab[3][0+:8];
+					memory_array3[addrb_shift ][1] <= datab[3][8+:8];
+					memory_array3[addrb_shift ][2] <= datab[3][16+:8];
+					memory_array3[addrb_shift ][3] <= datab[3][24+:8];
+					
+					memory_array4[addrb_shift ][0] <= datab[4][0+:8];
+					memory_array4[addrb_shift ][1] <= datab[4][8+:8];
+					memory_array4[addrb_shift ][2] <= datab[4][16+:8];
+					memory_array4[addrb_shift ][3] <= datab[4][24+:8];
+					
+					memory_array5[addrb_shift ][0] <= datab[5][0+:8];
+					memory_array5[addrb_shift ][1] <= datab[5][8+:8];
+					memory_array5[addrb_shift ][2] <= datab[5][16+:8];
+					memory_array5[addrb_shift ][3] <= datab[5][24+:8];
+					
+					memory_array6[addrb_shift ][0] <= datab[6][0+:8];
+					memory_array6[addrb_shift ][1] <= datab[6][8+:8];
+					memory_array6[addrb_shift ][2] <= datab[6][16+:8];
+					memory_array6[addrb_shift ][3] <= datab[6][24+:8];
+					
+					memory_array7[addrb_shift ][0] <= datab[7][0+:8];
+					memory_array7[addrb_shift ][1] <= datab[7][8+:8];
+					memory_array7[addrb_shift ][2] <= datab[7][16+:8];
+					memory_array7[addrb_shift ][3] <= datab[7][24+:8];
+					end
+					
+		  else begin
+		  case(addrb[5:2])
+		  3'b000: begin
+        if (wenbb[0]) begin
+            memory_array0[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array0[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array0[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array0[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b001: begin
+        if (wenbb[0]) begin
+            memory_array1[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array1[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array1[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array1[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b10: begin
+        if (wenbb[0]) begin
+            memory_array2[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array2[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array2[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array2[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b011: begin
+        if (wenbb[0]) begin
+            memory_array3[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array3[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array3[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array3[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b100: begin
+        if (wenbb[0]) begin
+            memory_array4[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array4[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array4[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array4[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b101: begin
+        if (wenbb[0]) begin
+            memory_array5[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array5[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array5[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array5[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b110: begin
+        if (wenbb[0]) begin
+            memory_array6[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array6[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array6[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array6[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  3'b111: begin
+        if (wenbb[0]) begin
+            memory_array7[addrb_shift][0] <= datab[0][0+:8];
+        end
+        if (wenbb[1]) begin
+            memory_array7[addrb_shift][1] <= datab[0][8+:8];
+        end
+        if (wenbb[2]) begin
+            memory_array7[addrb_shift][2] <= datab[0][16+:8];
+        end
+        if (wenbb[3]) begin
+            memory_array7[addrb_shift][3] <= datab[0][24+:8];
+        end
+		  end
+		  default:;
+		  endcase
+		  end
+    end
+    if (renb) begin
+			qb[0] <= {memory_array0[addrb_shift][3],memory_array0[addrb_shift][2],memory_array0[addrb_shift][1],memory_array0[addrb_shift][0]};						
+			qb[1] <= {memory_array1[addrb_shift][3],memory_array1[addrb_shift][2],memory_array1[addrb_shift][1],memory_array1[addrb_shift][0]};
+			qb[2] <= {memory_array2[addrb_shift][3],memory_array2[addrb_shift][2],memory_array2[addrb_shift][1],memory_array2[addrb_shift][0]};
+			qb[3] <= {memory_array3[addrb_shift][3],memory_array3[addrb_shift][2],memory_array3[addrb_shift][1],memory_array3[addrb_shift][0]};
+			qb[4] <= {memory_array4[addrb_shift][3],memory_array4[addrb_shift][2],memory_array4[addrb_shift][1],memory_array4[addrb_shift][0]};
+			qb[5] <= {memory_array5[addrb_shift][3],memory_array5[addrb_shift][2],memory_array5[addrb_shift][1],memory_array5[addrb_shift][0]};
+			qb[6] <= {memory_array6[addrb_shift][3],memory_array6[addrb_shift][2],memory_array6[addrb_shift][1],memory_array6[addrb_shift][0]};
+			qb[7] <= {memory_array7[addrb_shift][3],memory_array7[addrb_shift][2],memory_array7[addrb_shift][1],memory_array7[addrb_shift][0]};
+
+			end
+			
+    
+end
+//-------------------------------------------------------------------------------
+// Port A memory behavioral description
+//-------------------------------------------------------------------------------
+always_ff @(posedge clk) begin
+    if (rena) begin
+			 case(addra[5:2])
+			 3'b000: begin
+				qa[0+:8] <= memory_array0[addra_shift][0];
+				qa[8+:8] <= memory_array0[addra_shift][1];
+				qa[16+:8] <= memory_array0[addra_shift][2];
+				qa[24+:8] <= memory_array0[addra_shift][3];
+			 end
+			 3'b001: begin
+				qa[0+:8] <= memory_array1[addra_shift][0];
+				qa[8+:8] <= memory_array1[addra_shift][1];
+				qa[16+:8] <= memory_array1[addra_shift][2];
+				qa[24+:8] <= memory_array1[addra_shift][3];
+			 end
+			 3'b010: begin
+				qa[0+:8] <= memory_array2[addra_shift][0];
+				qa[8+:8] <= memory_array2[addra_shift][1];
+				qa[16+:8] <= memory_array2[addra_shift][2];
+				qa[24+:8] <= memory_array2[addra_shift][3];
+			 end
+			 3'b011: begin
+				qa[0+:8] <= memory_array3[addra_shift][0];
+				qa[8+:8] <= memory_array3[addra_shift][1];
+				qa[16+:8] <= memory_array3[addra_shift][2];
+				qa[24+:8] <= memory_array3[addra_shift][3];
+			 end
+			 3'b100: begin
+				qa[0+:8] <= memory_array4[addra_shift][0];
+				qa[8+:8] <= memory_array4[addra_shift][1];
+				qa[16+:8] <= memory_array4[addra_shift][2];
+				qa[24+:8] <= memory_array4[addra_shift][3];
+			 end
+			 3'b101: begin
+				qa[0+:8] <= memory_array5[addra_shift][0];
+				qa[8+:8] <= memory_array5[addra_shift][1];
+				qa[16+:8] <= memory_array5[addra_shift][2];
+				qa[24+:8] <= memory_array5[addra_shift][3];
+			 end
+			 3'b110: begin
+				qa[0+:8] <= memory_array6[addra_shift][0];
+				qa[8+:8] <= memory_array6[addra_shift][1];
+				qa[16+:8] <= memory_array6[addra_shift][2];
+				qa[24+:8] <= memory_array6[addra_shift][3];
+			 end
+			 3'b111: begin
+				qa[0+:8] <= memory_array7[addra_shift][0];
+				qa[8+:8] <= memory_array7[addra_shift][1];
+				qa[16+:8] <= memory_array7[addra_shift][2];
+				qa[24+:8] <= memory_array7[addra_shift][3];
+			 end
+			 default :;
+			 
+			 endcase
+
+    end
+end
+*/
+`else // SCR1_TARGET_FPGA_INTEL
+
+// CASE: OTHERS - SCR1_TARGET_FPGA_XILINX, SIMULATION, ASIC etc
+
+localparam int unsigned RAM_SIZE_WORDS = SCR1_SIZE/SCR1_NBYTES;
+
+//-------------------------------------------------------------------------------
+// Local signal declaration
+//-------------------------------------------------------------------------------
+logic [SCR1_WIDTH-1:0]                  ram_block [RAM_SIZE_WORDS-1:0];
+
+//-------------------------------------------------------------------------------
+// Port A memory behavioral description
+//-------------------------------------------------------------------------------
+always_ff @(posedge clk) begin
+    if (rena) begin
+        qa <= ram_block[addra];
+    end
+end
+
+//-------------------------------------------------------------------------------
+// Port B memory behavioral description
+//-------------------------------------------------------------------------------
+always_ff @(posedge clk) begin
+    if (wenb) begin
+		  if(w_is_vector) begin
+		  for(int i =0; i< `LANE ; i++)
+				ram_block[addrb + i] <= datab[i];
+		  end
+		  else begin
+        for (int i=0; i<SCR1_NBYTES; i++) begin
+            if (webb[i]) begin
+                ram_block[addrb][i*8 +: 8] <= datab[0][i*8 +: 8];
+            end
+        end
+   	 end 
+	end
+    if (renb) begin
+		  for(int i =0; i< `LANE ; i++) begin
+        		qb[i] <= ram_block[addrb + i];
+		  end
+    end
+end
+
+`endif // SCR1_TARGET_FPGA_INTEL
+
+
+
+endmodule : scr1_dp_memory

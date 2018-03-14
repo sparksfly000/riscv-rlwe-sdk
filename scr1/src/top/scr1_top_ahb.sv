@@ -86,8 +86,8 @@ logic                                               core_dmem_req;
 type_scr1_mem_cmd_e                                 core_dmem_cmd;
 type_scr1_mem_width_e                               core_dmem_width;
 logic [`SCR1_DMEM_AWIDTH-1:0]                       core_dmem_addr;
-logic [`SCR1_DMEM_DWIDTH-1:0]                       core_dmem_wdata;
-logic [`SCR1_DMEM_DWIDTH-1:0]                       core_dmem_rdata;
+type_vector                                         core_dmem_wdata;
+type_vector                                         core_dmem_rdata;
 type_scr1_mem_resp_e                                core_dmem_resp;
 
 // Instruction memory interface from router to AHB bridge
@@ -123,8 +123,8 @@ logic                                               tcm_dmem_req;
 type_scr1_mem_cmd_e                                 tcm_dmem_cmd;
 type_scr1_mem_width_e                               tcm_dmem_width;
 logic [`SCR1_DMEM_AWIDTH-1:0]                       tcm_dmem_addr;
-logic [`SCR1_DMEM_DWIDTH-1:0]                       tcm_dmem_wdata;
-logic [`SCR1_DMEM_DWIDTH-1:0]                       tcm_dmem_rdata;
+type_vector                                         tcm_dmem_wdata;
+type_vector                                         tcm_dmem_rdata;
 type_scr1_mem_resp_e                                tcm_dmem_resp;
 `endif // SCR1_TCM_EN
 

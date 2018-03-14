@@ -1,0 +1,6 @@
+fpga/de10lite/scr1/db/**
+fpga/de10lite/scr1/incremental_db/**
+fpga/de10lite/scr1/.qsys_edit/**
+fpga/de10lite/scr1/greybox_tmp/**
+fpga/de10lite/scr1/output/*
+

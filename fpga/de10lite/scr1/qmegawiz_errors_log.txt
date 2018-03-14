@@ -1,0 +1,91 @@
+
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 02 07PM:59:24>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 03 08AM:57:14>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 12AM:52:15>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 12AM:52:35>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 12AM:52:39>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 12AM:54:27>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 12AM:55:36>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 06PM:06:31>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 04 06PM:14:49>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.v
+
+Mar 05 08AM:42:55>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/sparksfly/Desktop/scr1-fpga/fpga/de10lite/scr1/ip/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)

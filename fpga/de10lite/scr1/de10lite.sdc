@@ -2,7 +2,7 @@
 
 create_clock  -name MAX10_CLK2_50       -period 20  [get_ports {MAX10_CLK2_50}]
 create_clock  -name JTAG_TCK            -period 200 [get_ports {JTAG_TCK}]
-create_clock  -name DRAM_CLK            -period 10
+create_clock  -name DRAM_CLK            -period 20
 
 
 
@@ -69,8 +69,8 @@ set_false_path -from [get_ports {SW*}]
 # Board Delay (Data) + Propagation Delay - Board Delay (Clock)
 # max 5.4(max) +0.4(trace delay) +0.1 = 5.9
 # min 2.7(min) +0.4(trace delay) -0.1 = 3.0
-set_input_delay -max -clock DRAM_CLK 5.9 [get_ports DRAM_DQ*]
-set_input_delay -min -clock DRAM_CLK 3.0 [get_ports DRAM_DQ*]
+set_input_delay -max -clock DRAM_CLK 5.9 [get_ports DRAM_DQ[*]]
+set_input_delay -min -clock DRAM_CLK 3.0 [get_ports DRAM_DQ[*]]
 
 #shift-window
 set_multicycle_path -from [get_clocks {DRAM_CLK}] \
@@ -85,7 +85,7 @@ set_multicycle_path -from [get_clocks {DRAM_CLK}] \
 # min : Board Delay (Data) - Board Delay (Clock) - th (External Device)
 # max 1.5+0.1 =1.6
 # min -0.8-0.1 = 0.9
-set_output_delay -max -clock DRAM_CLK  1.6  [get_ports {DRAM_DQ* DRAM_*DQM}]
-set_output_delay -min -clock DRAM_CLK -0.9  [get_ports {DRAM_DQ* DRAM_*DQM}]
+set_output_delay -max -clock DRAM_CLK  1.6  [get_ports {DRAM_DQ[*] DRAM_DQM*}]
+set_output_delay -min -clock DRAM_CLK -0.9  [get_ports {DRAM_DQ[*] DRAM_DQM*}]
 set_output_delay -max -clock DRAM_CLK  1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}]
 set_output_delay -min -clock DRAM_CLK -0.9  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}]

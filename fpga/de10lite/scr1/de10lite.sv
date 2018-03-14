@@ -14,8 +14,7 @@
 `include "scr1_memif.svh"
 `include "scr1_ipic.svh"
 
-`define  MYPLL
-
+//`define MYPLL
 
 parameter bit [31:0] FPGA_DE10_BUILD_ID = `SCR1_ARCH_BUILD_ID;
 
@@ -29,10 +28,9 @@ module de10lite (
     output                          DRAM_CKE,
     output                          DRAM_CLK,
     output                          DRAM_CS_N,
-    inout                [15:0]     DRAM_DQ,
-    output                          DRAM_LDQM,
+    inout                [31:0]     DRAM_DQ,
+    output               [3:0]      DRAM_DQM,
     output                          DRAM_RAS_N,
-    output                          DRAM_UDQM,
     output                          DRAM_WE_N,
 
     output                          UART_RXD,   // -> UART
@@ -121,21 +119,23 @@ logic [1:0]                         avl_dmem_response;
 
 
 
-
+//    my pll 
 
 
 assign rst_in = KEY[0] & pll_locked;
 
 `ifdef MYPLL
-my_pll i_pll (
-    .inclk0         (MAX10_CLK2_50  ),
-    .c0             (clk_riscv      ),
-    .c1             (clk_sdram      ),
-    .c2             (DRAM_CLK       ),
-    .locked         (pll_locked     )
-);
+
+MyPLL i_pll(
+	.inclk0(MAX10_CLK2_50),
+	.c0(clk_riscv),
+	.c1(clk_sdram),
+	.c2(DRAM_CLK),
+	.locked(pll_locked));
+	
 
 `else
+
 pll i_pll (
     .inclk0         (MAX10_CLK2_50  ),
     .c0             (clk_riscv      ),
@@ -145,6 +145,7 @@ pll i_pll (
 );
 
 `endif
+
 
 
 always_ff @(posedge clk_riscv, negedge rst_in)
@@ -361,7 +362,7 @@ de10lite_qsys i_de10lite_qsys (
         .sdram_cke                  (DRAM_CKE               ),
         .sdram_cs_n                 (DRAM_CS_N              ),
         .sdram_dq                   (DRAM_DQ                ),
-        .sdram_dqm                  ({DRAM_UDQM,DRAM_LDQM}  ),
+        .sdram_dqm                  (DRAM_DQM               ),
         .sdram_ras_n                (DRAM_RAS_N             ),
         .sdram_we_n                 (DRAM_WE_N              ),
 

@@ -38,9 +38,27 @@ set_location_assignment PIN_AB2 -to DRAM_DQ[12]
 set_location_assignment PIN_AC1 -to DRAM_DQ[13]
 set_location_assignment PIN_AB3 -to DRAM_DQ[14]
 set_location_assignment PIN_AC2 -to DRAM_DQ[15]
-set_location_assignment PIN_U2 -to DRAM_LDQM
+set_location_assignment PIN_M8 -to DRAM_DQ[16]
+set_location_assignment PIN_L8 -to DRAM_DQ[17]
+set_location_assignment PIN_P2 -to DRAM_DQ[18]
+set_location_assignment PIN_N3 -to DRAM_DQ[19]
+set_location_assignment PIN_N4 -to DRAM_DQ[20]
+set_location_assignment PIN_M4 -to DRAM_DQ[21]
+set_location_assignment PIN_M7 -to DRAM_DQ[22]
+set_location_assignment PIN_L7 -to DRAM_DQ[23]
+set_location_assignment PIN_U5 -to DRAM_DQ[24]
+set_location_assignment PIN_R7 -to DRAM_DQ[25]
+set_location_assignment PIN_R1 -to DRAM_DQ[26]
+set_location_assignment PIN_R2 -to DRAM_DQ[27]
+set_location_assignment PIN_R3 -to DRAM_DQ[28]
+set_location_assignment PIN_T3 -to DRAM_DQ[29]
+set_location_assignment PIN_U4 -to DRAM_DQ[30]
+set_location_assignment PIN_U1 -to DRAM_DQ[31]
+set_location_assignment PIN_U2 -to DRAM_DQM[0]
+set_location_assignment PIN_W4 -to DRAM_DQM[1]
+set_location_assignment PIN_K8 -to DRAM_DQM[2]
+set_location_assignment PIN_N8 -to DRAM_DQM[3]
 set_location_assignment PIN_U6 -to DRAM_RAS_N
-set_location_assignment PIN_W4 -to DRAM_UDQM
 set_location_assignment PIN_V6 -to DRAM_WE_N
 
 
@@ -122,8 +140,8 @@ set_location_assignment PIN_AC25 -to SW[8]
 set_location_assignment PIN_AB25 -to SW[9]
 
 #UART
-set_location_assignment PIN_G9 -to UART_TXD
-set_location_assignment PIN_G12 -to UART_RXD
+set_location_assignment PIN_G12 -to UART_TXD
+set_location_assignment PIN_G9 -to UART_RXD
 
 ##JATG_DEBUG
 

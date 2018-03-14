@@ -412,7 +412,7 @@
   <parameter name="enPRInitMode" value="false" />
   <parameter name="enableDiffWidth" value="false" />
   <parameter name="initMemContent" value="true" />
-  <parameter name="initializationFileName">E:/Git/riscv-rlwe-sdk/fpga/de10lite/scr1/ip/scbl.hex</parameter>
+  <parameter name="initializationFileName">D:/project/FPGA/quartus_project/scr1-fpga/fpga/de10lite/scr1/ip/scbl_20M.hex</parameter>
   <parameter name="instanceID" value="NONE" />
   <parameter name="memorySize" value="65536" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
@@ -523,7 +523,7 @@
   <parameter name="clockRate" value="100000000" />
   <parameter name="columnWidth" value="10" />
   <parameter name="componentName" value="$${FILENAME}_sdram" />
-  <parameter name="dataWidth" value="16" />
+  <parameter name="dataWidth" value="32" />
   <parameter name="generateSimulationModel" value="false" />
   <parameter name="initNOPDelay" value="0.0" />
   <parameter name="initRefreshCommands" value="2" />

@@ -36,7 +36,7 @@ module de10lite_qsys_onchip_ram (
                                 )
 ;
 
-  parameter INIT_FILE = "E:/Git/riscv-rlwe-sdk/fpga/de10lite/scr1/ip/scbl.hex";
+  parameter INIT_FILE = "D:/project/FPGA/quartus_project/scr1-fpga/fpga/de10lite/scr1/ip/scbl_20M.hex";
 
 
   output  [ 63: 0] readdata;

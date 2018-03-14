@@ -299,8 +299,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 928)
 		(output)
-		(text "sdram_dqm[1..0]" (rect 0 0 68 12)(font "Arial" (font_size 8)))
-		(text "sdram_dqm[1..0]" (rect 4 917 94 928)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[3..0]" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "sdram_dqm[3..0]" (rect 4 917 94 928)(font "Arial" (font_size 8)))
 		(line (pt 0 928)(pt 144 928)(line_width 3))
 	)
 	(port
@@ -369,8 +369,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 912)
 		(bidir)
-		(text "sdram_dq[15..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
-		(text "sdram_dq[15..0]" (rect 4 901 94 912)(font "Arial" (font_size 8)))
+		(text "sdram_dq[31..0]" (rect 0 0 64 12)(font "Arial" (font_size 8)))
+		(text "sdram_dq[31..0]" (rect 4 901 94 912)(font "Arial" (font_size 8)))
 		(line (pt 0 912)(pt 144 912)(line_width 3))
 	)
 	(drawing
